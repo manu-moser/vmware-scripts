@@ -28,3 +28,7 @@ The vSAN trace files need to have the file ending of either .txt or .log and hav
 - seaborn
 - vsancmmdsfunctions.py (in this repo)
 - vsantracefunctions.py (in this repo)
+
+## Script process-vsan-traces.sh
+This script can be used to automatically extract all the vSAN traces in an ESXi log bundle and process them using vsanTraceReader.
+Note: vSAN traces are written in binary and require to be processed by vsanTraceReader to make them human-readable.
