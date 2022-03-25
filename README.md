@@ -15,3 +15,15 @@ This script needs to be executed on a live ESXi host and will get the unmap stat
  a1866e5d-366d-73b1-63bf-0cc47ac73060 |                      0 |                            0 | testVM04
  4c365260-ec2d-7bb6-06df-0cc47ac73124 |                      0 |                            0 | testVM05
  ```
+
+## Script vsan-unaligned-io.py
+This script lists unaligned vSAN IO based on the vSAN traces and also show the latency for each unaligned vSAN IO, and can also plot a graph for it.
+The vSAN trace files need to have the file ending of either .txt or .log and have to have been processed by vsanTraceReader before. To make things easier, you can use the script "process-vsan-traces.sh" from this repo.
+
+**Dependencies on Python modules:**
+- matplotlib
+- numpy
+- pandas
+- seaborn
+- vsancmmdsfunctions.py (in this repo)
+- vsantracefunctions.py (in this repo)
