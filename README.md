@@ -1,1 +1,17 @@
 # vsan-scripts
+
+## Script get-unmap-stats.py
+This script needs to be executed on a live ESXi host and will get the unmap stats for the vSAN objects and related VM names.
+
+**Example:**
+```
+[root@someesxi01:~] python /tmp/get-unmap-stats.py
+ Object UUID                          | Total number of unmaps | Total unmap bytes            | Related VM
+------------------------------------------------------------------------------------------------------------------
+ e6c15160-0427-e65d-fa9c-0cc47ac73060 |                 761909 |                 973444784128 | testVM01
+ 6ca40f61-3b8d-a57c-fa55-0cc47ac731c6 |                  16681 |                  50117963776 | testVM02
+ c3efe15f-de83-729e-7b53-0cc47ac73060 |                      0 |                            0 | testVM03
+ 24232661-51d9-46a5-c9f7-0cc47ac73124 |                      0 |                            0 | VCSA70
+ a1866e5d-366d-73b1-63bf-0cc47ac73060 |                      0 |                            0 | testVM04
+ 4c365260-ec2d-7bb6-06df-0cc47ac73124 |                      0 |                            0 | testVM05
+ ```
