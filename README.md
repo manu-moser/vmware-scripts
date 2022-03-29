@@ -1,4 +1,5 @@
 # vmware-scripts
+Collection of various scripts for vSAN and vSphere.
 
 ## Script get-unmap-stats.py
 This script needs to be executed on a live ESXi host and will get the unmap stats for the vSAN objects and related VM names.
