@@ -1,7 +1,7 @@
 # vmware-scripts
 Collection of various scripts for vSAN and vSphere.
 
-## Script get-unmap-stats.py
+## Script vsan/get-unmap-stats.py
 This script needs to be executed on a live ESXi host and will get the unmap stats for the vSAN objects and related VM names.
 
 **Example:**
@@ -17,7 +17,7 @@ This script needs to be executed on a live ESXi host and will get the unmap stat
  4c365260-ec2d-7bb6-06df-0cc47ac73124 |                      0 |                            0 | testVM05
  ```
 
-## Script vsan-unaligned-io.py
+## Script vsan/vsan-unaligned-io.py
 This script lists unaligned vSAN IO based on the vSAN traces in an ESXi log bundle. The output will also contain the latency for each unaligned IO.
 Optionionally a graph can be plotted as well.
 The vSAN trace files need to have the file ending of either .txt or .log and have to have been processed by vsanTraceReader before. To make things easier, you can use the script "process-vsan-traces.sh" from this repo.
@@ -30,6 +30,6 @@ The vSAN trace files need to have the file ending of either .txt or .log and hav
 - vsancmmdsfunctions.py (in this repo)
 - vsantracefunctions.py (in this repo)
 
-## Script process-vsan-traces.sh
+## Script vsan/process-vsan-traces.sh
 This script can be used to automatically extract all the vSAN traces in an ESXi log bundle and process them using vsanTraceReader.
 Note: vSAN traces are written in binary and require to be processed by vsanTraceReader to make them human-readable.
