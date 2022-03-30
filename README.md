@@ -1,6 +1,19 @@
 # vmware-scripts
 Collection of various scripts for vSAN and vSphere.
 
+## Script esxi/auto-create-logs.py
+This script automatically creates an ESXi log bundle of the host it's running on and of the specified remote hosts when the specified log message in the specified log file is encountered.
+Additionally, on the ESXi host the script is running on it can also create a hostd livedump if specified.
+
+The script will also create a log file in the specified working directory: auto-create-logs.log
+This log file will contain the start and completion times for the individual log bundle collections.
+
+### Running the script in the background (so you can close the SSH session)
+Add "setsid" at the start of the command and "&" at the end of it.
+
+**Example:**
+setsid python /tmp/auto-create-logs.py -m "mark: TEST" -f /var/log/vmkernel.log -w /vmfs/volumes/vsanDatastore/workDir/ -r somehost02.domain.com somehost03.domain.com -p "Password123" &
+
 ## Script vsan/get-unmap-stats.py
 This script needs to be executed on a live ESXi host and will get the unmap stats for the vSAN objects and related VM names.
 
