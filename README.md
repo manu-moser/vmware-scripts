@@ -18,7 +18,7 @@ setsid python /tmp/auto-create-logs.py -m "mark: TEST" -f /var/log/vmkernel.log 
 This script configures resync throttling at the vSAN cluster level via vCenter using API.
 In recent versions of vSAN the GUI option to configure resync throttling is no longer present, but it can still be configured using the API. Under some circumstances configuring resync throttling can be helpful. Hence, this script.
 
-**Syntax:** .\configure-resync-throttle.ps1 -cluster "<clusterName>" -value <integer>
+**Syntax:** .\configure-resync-throttle.ps1 -cluster "[clusterName]" -value [integer]
 
 Note: For version 7.0 and later make sure that you're on at least PowerCLI version 12.2, otherwise the script can't get the cluster MoRef. As a workaround, if for some reason the customer doesn't want to update their PowerCLI version, the cluster MoID can be specified manually via parameter "-moid" as well.
 
