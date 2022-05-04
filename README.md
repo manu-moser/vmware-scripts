@@ -14,6 +14,14 @@ Add "setsid" at the start of the command and "&" at the end of it.
 **Example:**
 setsid python /tmp/auto-create-logs.py -m "mark: TEST" -f /var/log/vmkernel.log -w /vmfs/volumes/vsanDatastore/workDir/ -r somehost02.domain.com somehost03.domain.com -p "Password123" &
 
+## Script vsan/configure-resync-throttle.ps1
+This script configures resync throttling at the vSAN cluster level via vCenter using API.
+In recent versions of vSAN the GUI option to configure resync throttling is no longer present, but it can still be configured using the API. Under some circumstances configuring resync throttling can be helpful. Hence, this script.
+
+**Syntax:** .\configure-resync-throttle.ps1 -cluster "<clusterName>" -value <integer>
+
+Note: For version 7.0 and later make sure that you're on at least PowerCLI version 12.2, otherwise the script can't get the cluster MoRef. As a workaround, if for some reason the customer doesn't want to update their PowerCLI version, the cluster MoID can be specified manually via parameter "-moid" as well.
+
 ## Script vsan/get-unmap-stats.py
 This script needs to be executed on a live ESXi host and will get the unmap stats for the vSAN objects and related VM names.
 
